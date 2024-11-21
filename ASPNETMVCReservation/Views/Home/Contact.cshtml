@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    ViewBag.Message = "Nous serions ravis de vous entendre. N'hésitez pas à nous contacter !";
+}
+
+<main aria-labelledby="title" class="container mt-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h2 id="title" class="mb-0">@ViewBag.Title</h2>
+        </div>
+        <div class="card-body">
+            <h3 class="text-secondary">@ViewBag.Message</h3>
+            <div class="mt-4">
+                <h4 class="text-primary">Adresse : 7555 Boulevard Viau</h4>
+                <address class="mb-4">
+                    <strong>Siège social :</strong><br />
+                    One Microsoft Way<br />
+                    Redmond, WA 98052-6399<br />
+                    <abbr title="Phone">Téléphone :</abbr> 425.555.0100
+                </address>
+
+                <h4 class="text-primary">Contacts :</h4>
+                <address>
+                    <p class="mb-2">
+                        <strong>Support :</strong>
+                        <a href="mailto:Support@management.com" class="text-decoration-none">Support@management.com</a>
+                    </p>
+                    <p>
+                        <strong>Marketing :</strong>
+                        <a href="mailto:Marketing@management.com" class="text-decoration-none">Marketing@management.com</a>
+                    </p>
+                </address>
+            </div>
+        </div>
+        <div class="card-footer text-center bg-light">
+            <p class="text-muted mb-0">Suivez-nous sur nos réseaux sociaux pour les dernières nouvelles et mises à jour.</p>
+        </div>
+    </div>
+</main>

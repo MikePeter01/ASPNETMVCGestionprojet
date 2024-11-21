@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "About";
+    ViewBag.Message = "En apprendre plus sur notre system de gestion de taches";
+}
+
+<main aria-labelledby="title" class="container mt-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h2 id="title" class="mb-0">@ViewBag.Title</h2>
+        </div>
+        <div class="card-body">
+            <h3 class="text-secondary">@ViewBag.Message</h3>
+            <p class="mt-3">
+                "Notre système de gestion de tâches vous aide à organiser,
+                prioriser et suivre vos tâches efficacement.."
+            </p>
+            <div class="mt-4">
+                <h4 class="text-primary">Caractéristiques principales :</h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Création et suivi des tâches simplifiés</li>
+                    <li class="list-group-item">Rapports de progression détaillés</li>
+                    <li class="list-group-item">Catégories de tâches personnalisables</li>
+                    <li class="list-group-item">Rapport sur les dates des taches</li>
+                    <li class="list-group-item">notification sur l'avancement de vos taches</li>
+
+                </ul>
+
+                </ul>
+            </div>
+        </div>
+        <div class="card-footer text-center bg-light">
+            <p class="text-muted mb-0">Pour plus d'information, contacter nous a info@management.com</p>
+        </div>
+    </div>
+</main>

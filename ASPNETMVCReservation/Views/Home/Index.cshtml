@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Page d'accueil";
+}
+
+<main class="container mt-5">
+    <section class="text-center mb-5" aria-labelledby="aspnetTitle">
+        <h1 id="title" class="display-4 text-primary">Gestion de Projet</h1>
+        <p class="lead text-muted">Votre application de gestion de taches</p>
+    </section>
+
+    @{
+        if (User.Identity.IsAuthenticated)
+        {
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Mes tâches</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Prénom</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Pseudo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@@mdo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row text-center">
+                <section class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h2 class="card-title text-primary">Gestion des tâches</h2>
+                            <p class="card-text">
+                                Créer, assigner et suivre les tâches avec des priorités.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h2 class="card-title text-primary">Collaboration</h2>
+                            <p class="card-text">
+                                Partager des tâches avec d'autres utilisateurs, ajouter des commentaires.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h2 class="card-title text-primary">Suivi du temps</h2>
+                            <p class="card-text">
+                                Enregistrer le temps passé sur chaque tâche.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h2 class="card-title text-primary">Mes notifications</h2>
+                            <p class="card-text">
+                                Voir l'avancement de vos projets et des mises a jour'.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            
+
+            <section class="col-md-4 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">Rapport</h2>
+                        <p class="card-text">
+                            Generation des rapport de projet.
+                        </p>
+                    </div>
+                </div>
+            </section>
+                </div>
+            
+        }
+    }
+</main>

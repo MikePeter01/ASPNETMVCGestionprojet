@@ -1,0 +1,83 @@
+﻿@model ASPNETMVCReservation.Models.TacheAssignation
+
+@{
+    ViewBag.Title = "Assigner une tache a un utilisateur";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Assigner","Collaboration",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>TacheAssignation</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Collaborateur, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                <select name="Collaborateur" id="Auteur" class="form-control col-md-8">
+                    @{
+                        foreach (ASPNETMVCReservation.Models.AspNetUser user in ViewBag.Users)
+                        {
+                            <option value="@user.Id">@user.UserName</option>
+                        }
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.Collaborateur, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tache, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                <select name="Tache" id="Auteur" class="form-control col-md-8">
+                    @{
+                        foreach (var tache in ViewBag.Taches)
+                        {
+                            <option value="@tache.TacheID">@tache.Titre</option>
+                        }
+                    }
+
+                </select>
+                @Html.ValidationMessageFor(model => model.Tache, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 mt-2 mb-5">
+                <input type="submit" value="Assigner" class="btn btn-dark" />
+            </div>
+        </div>
+    </div>
+}
+
+<br />
+<table width="100%">
+    <tr>
+        <td>Tache</td>
+        <td>Username</td>
+    </tr>
+
+    @{
+        foreach (var item in ViewBag.Assignation)
+        {
+            <tr>
+                <td>@item.Tachedesc</td>
+                <td>@item.Collaborateur</td>
+            </tr>
+        }
+    }
+
+</table>
+
+
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@

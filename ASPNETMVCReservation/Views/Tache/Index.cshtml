@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ASPNETMVCReservation.Models.Tach>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="mb-5 mt-5">Liste des taches </h2>
+
+<p>
+   <a href="@Url.Action("Create")" class="btn btn-success mt-5">Nouvelle Tache</a>
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Titre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCreation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateEcheance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateFinReelle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Auteur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Priorite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Statut)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Titre)
+        </td>
+        <td>
+            @Convert.ToDateTime(item.DateCreation).ToString("ddd, dd MMM yyyy");
+        </td>
+        <td>
+            @Convert.ToDateTime(item.DateEcheance).ToString("ddd, dd MMM yyyy");
+        </td>
+        <td>
+            @Convert.ToDateTime(item.DateFinReelle).ToString("ddd, dd MMM yyyy");
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Auteur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Priorite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Statut)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.TacheID }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TacheID }, new { @class = "btn btn-warning " })<br />
+            @Html.ActionLink("Delete", "Delete", new { id = item.TacheID }, new { @class = "btn btn-danger " })
+        </td>
+    </tr>
+}
+
+</table>
